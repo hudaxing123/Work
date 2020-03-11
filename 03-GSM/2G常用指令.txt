@@ -1,0 +1,58 @@
+AT+QOPS?     扫一下周围频点,频点的排列顺序是怎么样的？
+
+
+AT+QLOCKF=1,0,xxx-----锁频点
+
+AT+CSQ      信号质量
+
+
+AT+CREG?  注网状态
+
+AT+CSQ;+CGREG?;+CEREG?;+CREG?;+qcsq;+qnwinfo;+cops?  
+
+at+qeng="servingcell"  查看注册的是哪个网络
+
+
+
+锦弘霖AT流程
+
+AT
+
+ATE1
+
+AT+CSQ?              查询信号质量
+
+AT+CGREG?          查询GPRS网络注册情况，返回0，1/5注册成功。
+
+AT+CGREG=2       主动上报注网状态。
+间隔10S
+AT+CGREG?
+
+AT+CGREG?
+
+AT+QENG=1         打开网络信息参数查询，不主动上报
+
+AT+QENG？       查询网络信息
+
+AT+QENG=2      打开网络信息查询，且主动上报信息。查询小区。
+
+AT+QIREGAPP="CMNET"     配置APN，一般只有正确的配置了APN以后才可以查询IP状态
+
+AT+QISTAT  查询IP  状态  IP START（正常）
+
+AT+QIACT 场景激活，只有在IP START下才能激活场景，返回ERROR后先去激活，在尝试激活。
+
+AT+QIDEACT 场景去激活，与场景激活配对使用
+
+AT+QILOCIP                    只有在移动场景已激活状态： IP GPRSACT、 TCP/UDP CONNECTING、                                          CONNECT OK、 IP CLOSE 下才可以通过 AT+QILOCIP 查询到本地 IP 地址                                         否则返回 ERROR
+
+
+成功后APN  和场景激活
+
+
+
+
+
+
+
+

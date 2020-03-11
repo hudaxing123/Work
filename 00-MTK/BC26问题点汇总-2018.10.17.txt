@@ -1,0 +1,20 @@
+BC26标准版本（BC26NBR01A02）问题点：
+
+1.NETLIGHT*、RI 信号*、ADC 接口*标准版本一直*符合，什么时候能实现，还是一直不支持？电源阈范围？
+
+2.PSM_EINT可以硬件唤醒PSM，但该引脚电源阈在手册并没有做说明？包括RESET引脚，openCPU PSM唤醒模式？
+答复：PSM_EINT 的电压域为VBAT。
+
+3.我们推荐开集驱动电路来控制PWRKEY引脚，PWRKEY引脚内部是上拉吗？openCPU开机引脚如何设计？
+答复：上拉到VBAT_BC26，电压阈与VBAT_BC26一样。openCPU开机PWRKEY设计参考openCPU参考设计。
+
+4.出现入网成功，也分配IP，但查询和AT+QENG=0返回错误，无法获得信号强度。
+
+BC26 openCPU版本问题点：
+1.反馈BC26 openCPU每次从PSM唤醒到执行APP程序，都要重新执行一遍，之前参数全部不会保存，唤醒到执行时间要1-2S;
+  客户希望PSM醒来，立马能响应，参数不会丢失。
+
+
+
+
+ 

@@ -1,0 +1,9 @@
+1、常用指令说明：
+
+AT+QURCCFG 配置URC上报的口是哪个。
+可以配置成USBMODEM、USBAT、UART1
+注：查询失败，返回ERROR。
+
+AT+CPAS模块的状态 0 READY 
+				  3 RING
+				  4 Call in progress or call hold
